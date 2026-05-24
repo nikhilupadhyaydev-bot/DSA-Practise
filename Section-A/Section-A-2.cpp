@@ -136,6 +136,16 @@ void p10(){
         cout << endl;
     }
 }
+void p18(){
+    int n;
+    cin >> n;
+    for(int i=0;i<n;i++){
+        for(char c='E'-i;c<='E';c++){
+            cout << c;
+        }
+        cout << endl;
+    }
+}
 int main(){
     // p1();
     // p2();
@@ -146,5 +156,7 @@ int main(){
     // p7();
     // p8();
     // p9();
-    p10();
+    // p10();
+    // p18();
+    p19();
 }
