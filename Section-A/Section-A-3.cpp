@@ -84,9 +84,47 @@ void vec(){
 
 }
 
+void lis(){
+    list<int> l;
+    l.push_back(1);
+    l.emplace_back(2);
+    l.push_front(3);
+    l.emplace_front(4);
+
+    // remaining functions are same as vector but with different time complexities
+}
+
+void deq(){
+    deque<int> d;
+    d.push_back(1);
+    d.emplace_back(2);
+    d.push_front(3);
+    d.emplace_front(4);
+    d.pop_back();
+    d.pop_front();
+    d.back(); // returns the last element of the deque
+    d.front(); // returns the first element of the deque
+
+    // remaining functions are same as vector but with different time complexities
+}
+
+void sta(){
+    stack<int> s;
+    s.push(1);
+    s.emplace(2);
+    s.push(3);
+    s.pop();
+    cout << s.top() << endl; // returns the top element of the stack
+    s.size(); // returns the number of elements in the stack
+    s.empty(); // returns true if the stack is empty, false otherwise
+}
+
 
 int main(){
     // pairs();
-    vec();
+    // vec();
+    // lis();
+    // deq();
+    sta();
     return 0;
 }
