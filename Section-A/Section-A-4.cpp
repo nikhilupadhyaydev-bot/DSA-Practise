@@ -53,10 +53,29 @@ void gcd(){
     }
     cout << a << endl;
 }
+
+void armstrong(){
+    int n,temp=0,sum=0;
+    cin >> n;
+    temp=n;
+    while(n!=0){
+        int rem=n%10;
+        sum=sum+(rem*rem*rem);
+        n=n/10;
+    }
+    if(temp==sum){
+        cout << "Armstrong" << endl;
+    }
+    else{
+        cout << "Not Armstrong" << endl;
+    }
+}
+
 int main(){
     // count();
     // rev();
     // palindrome();
-    gcd();
+    // gcd();
+    armstrong();
     return 0;
 }
