@@ -84,14 +84,19 @@ void div(){
 void prime(){
     int n;
     cin >> n;
+    if(n==1){
+        cout << "Neither prime nor composite" << endl;
+        return;
+    }
     for(int i=2;i<n;i++){
         if(n%i==0){
-            cout << "Not Prime" << endl;
+            cout << "Not Prime at Smallest Divisor: " << i << endl;
             return;
         }
     }
     cout << "Prime" << endl;
 }
+
 int main(){
     // count();
     // rev();
