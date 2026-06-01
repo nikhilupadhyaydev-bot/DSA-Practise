@@ -80,12 +80,25 @@ void div(){
         }
     }
 }
+
+void prime(){
+    int n;
+    cin >> n;
+    for(int i=2;i<n;i++){
+        if(n%i==0){
+            cout << "Not Prime" << endl;
+            return;
+        }
+    }
+    cout << "Prime" << endl;
+}
 int main(){
     // count();
     // rev();
     // palindrome();
     // gcd();
     // armstrong();
-    div();
+    // div();
+    prime();
     return 0;
 }
