@@ -23,8 +23,26 @@ void rev(){
     cout << rev << endl;
 }
 
+void palindrome(){
+    int n,rev=0,temp=0;
+    cin >> n;
+    temp=n;
+    while(n!=0){
+        rev=rev*10+(n%10);
+        n=n/10;
+    }
+    // cout << rev; reverse works successfully
+    if(temp==rev){
+        cout << "Palindrome" << endl;
+    }
+    else{
+        cout << "Not palindrome" << endl;
+    }
+}
+
 int main(){
     // count();
-    rev();
+    // rev();
+    palindrome();
     return 0;
 }
