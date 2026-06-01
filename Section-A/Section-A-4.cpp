@@ -71,11 +71,21 @@ void armstrong(){
     }
 }
 
+void div(){
+    int n;
+    cin >> n;
+    for(int i=1;i<n;i++){
+        if(n%i==0){
+            cout << i << " ";
+        }
+    }
+}
 int main(){
     // count();
     // rev();
     // palindrome();
     // gcd();
-    armstrong();
+    // armstrong();
+    div();
     return 0;
 }
