@@ -26,6 +26,14 @@ void p3(int &n,int &count){
     count++;
     p3(n,count);
 }
+void p4(int &n){
+    if(n==0){
+        return;
+    }
+    cout << n << endl;
+    n--;
+    p4(n);
+}
 int main(){
     string s;
     // getline(cin,s);
@@ -34,5 +42,6 @@ int main(){
     cin >> n;
     // p1(n,count);
     // p2(n,count,s);
-    p3(n,count);
+    // p3(n,count);
+    p4(n);
 }
