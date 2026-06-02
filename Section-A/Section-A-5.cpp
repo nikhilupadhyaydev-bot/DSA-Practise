@@ -34,14 +34,24 @@ void p4(int &n){
     n--;
     p4(n);
 }
+void p5(int &n, int &count, int &sum){
+    if(count==n){
+        cout << sum << endl;
+        return;
+    }
+    sum = sum + count+1;
+    count++;
+    p5(n, count, sum);
+}
 int main(){
     string s;
     // getline(cin,s);
     // cout << endl;
-    int n,count=0;
+    int n,count=0,sum=0;
     cin >> n;
     // p1(n,count);
     // p2(n,count,s);
     // p3(n,count);
-    p4(n);
+    // p4(n);
+    p5(n,count,sum);
 }
