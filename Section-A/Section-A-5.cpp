@@ -43,6 +43,12 @@ void p5(int &n, int &count, int &sum){
     count++;
     p5(n, count, sum);
 }
+int p6(int n){
+    if(n==0 || n==1){
+        return 1;
+    }
+    return n*p6(n-1);
+}
 int main(){
     string s;
     // getline(cin,s);
@@ -53,5 +59,6 @@ int main(){
     // p2(n,count,s);
     // p3(n,count);
     // p4(n);
-    p5(n,count,sum);
+    // p5(n,count,sum);
+    cout << p6(n) << endl;
 }
