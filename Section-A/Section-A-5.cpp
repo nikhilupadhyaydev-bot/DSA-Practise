@@ -8,8 +8,20 @@ void p1(int &n,int &count){
     count++;
     p1(n,count);
 }
+void p2(int &n,int &count,string s){
+    if(n==count){
+        return;
+    }
+    cout << s << count+1 << endl;
+    count++;
+    p2(n,count,s);
+}
 int main(){
+    string s;
+    getline(cin,s);
+    cout << endl;
     int n,count=0;
     cin >> n;
-    p1(n,count);
+    // p1(n,count);
+    p2(n,count,s);
 }
