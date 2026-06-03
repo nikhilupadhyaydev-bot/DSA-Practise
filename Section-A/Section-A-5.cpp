@@ -53,6 +53,16 @@ void p7(string s){
     reverse(s.begin(),s.end());
     cout << s << endl;
 }
+void p8(string s){
+    string name = s;
+    reverse(name.begin(),name.end());
+    if(name==s){
+        cout << "Palindrome" << endl;
+    }
+    else{
+        cout << "Not Palindrome" << endl;
+    }
+}
 int main(){
     string s;
     getline(cin,s);
@@ -65,5 +75,6 @@ int main(){
     // p4(n);
     // p5(n,count,sum);
     // cout << p6(n) << endl;
-    p7(s);
+    // p7(s);
+    p8(s);
 }
