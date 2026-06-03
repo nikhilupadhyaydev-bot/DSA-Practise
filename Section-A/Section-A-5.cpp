@@ -63,12 +63,32 @@ void p8(string s){
         cout << "Not Palindrome" << endl;
     }
 }
+void p9(int &n){
+    // fibonacci series
+    if(n==0){
+        cout << 0 << endl;
+        return;
+    }
+    if(n==1){
+        cout << 1 << endl;
+        return;
+    }
+    int prev=0,curr=1,next;
+    cout << prev << " " << curr << " ";
+    for(int i=2;i<=n;i++){
+        next=prev+curr;
+        cout << next << " ";
+        prev=curr;
+        curr=next;
+    }
+    cout << endl;
+}
 int main(){
-    string s;
-    getline(cin,s);
+    // string s;
+    // getline(cin,s);
     // cout << endl;
-    // int n,count=0,sum=0;
-    // cin >> n;
+    int n,count=0,sum=0;
+    cin >> n;
     // p1(n,count);
     // p2(n,count,s);
     // p3(n,count);
@@ -76,5 +96,6 @@ int main(){
     // p5(n,count,sum);
     // cout << p6(n) << endl;
     // p7(s);
-    p8(s);
+    // p8(s);
+    p9(n);
 }
