@@ -49,16 +49,21 @@ int p6(int n){
     }
     return n*p6(n-1);
 }
+void p7(string s){
+    reverse(s.begin(),s.end());
+    cout << s << endl;
+}
 int main(){
     string s;
-    // getline(cin,s);
+    getline(cin,s);
     // cout << endl;
-    int n,count=0,sum=0;
-    cin >> n;
+    // int n,count=0,sum=0;
+    // cin >> n;
     // p1(n,count);
     // p2(n,count,s);
     // p3(n,count);
     // p4(n);
     // p5(n,count,sum);
-    cout << p6(n) << endl;
+    // cout << p6(n) << endl;
+    p7(s);
 }
