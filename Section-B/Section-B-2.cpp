@@ -1,17 +1,65 @@
 #include <bits/stdc++.h>
 using namespace std;
-void merge(){
-    // merge sort
+
+void merge(vector<int>& v, int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    vector<int> L(n1), R(n2);
+
+    for (int i = 0; i < n1; i++)
+        L[i] = v[left + i];
+
+    for (int i = 0; i < n2; i++)
+        R[i] = v[mid + 1 + i];
+
+    int i = 0, j = 0, k = left;
+
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j])
+            v[k++] = L[i++];
+        else
+            v[k++] = R[j++];
+    }
+
+    while (i < n1)
+        v[k++] = L[i++];
+
+    while (j < n2)
+        v[k++] = R[j++];
+}
+
+void mergeSort(vector<int>& v, int left, int right) {
+    if (left >= right)
+        return;
+
+    int mid = left + (right - left) / 2;
+
+    mergeSort(v, left, mid);
+    mergeSort(v, mid + 1, right);
+
+    merge(v, left, mid, right);
+}
+
+void solve() {
     int n;
     cin >> n;
-    vector<int> v;
-    for(int i=0;i<n;i++){
+
+    vector<int> v(n);
+
+    for (int i = 0; i < n; i++) {
         cin >> v[i];
     }
-    for(int i=0;i<n;i++){
-        cout << v[i] << " ";
+
+    mergeSort(v, 0, n - 1);
+
+    for (int x : v) {
+        cout << x << " ";
     }
+    cout << "\n";
 }
-int main(){
-    merge();
+
+int main() {
+    solve();
+    return 0;
 }
