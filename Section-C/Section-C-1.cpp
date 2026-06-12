@@ -40,7 +40,25 @@ void p2(){
     v.pop_back();
     cout << "2nd Largest Number is " << v[n-2];
 }
+void p3(){
+    int n;
+    cin >> n;
+    vector<int> v;
+    v.resize(n);
+    for(int i=0;i<n;i++){
+        cin >> v[i];
+    }
+    // check for sorted here
+    for(int i=0;i<n-1;i++){
+        if(v[i]>v[i+1]){
+            cout << "Unsorted Array";
+            return;
+        }
+    }
+    cout << "Sorted Array";
+}
 int main(){
     // p1();
-    p2();
+    // p2();
+    p3();
 }
