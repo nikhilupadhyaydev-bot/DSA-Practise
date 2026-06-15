@@ -72,9 +72,21 @@ void p4(){
         cout << x << " ";
     }
 }
+void p5(){
+    vector<int> arr = {1, 2, 3, 4, 5};
+    int temp = arr[0];
+    for (int i = 1; i < arr.size(); i++) {
+        arr[i - 1] = arr[i];
+    }
+    arr[arr.size() - 1] = temp;
+    for (int x : arr) {
+        cout << x << " ";
+    }
+}
 int main(){
     // p1();
     // p2();
     // p3();
-    p4();
+    // p4();
+    p5();
 }
