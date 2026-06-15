@@ -111,6 +111,18 @@ void p7(){
         cout << x << " ";
     }
 }
+void p8(){
+    vector<int> arr = {5, 8, 2, 10, 7};
+    int target = 10;
+    int index = -1;
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == target) {
+            index = i;
+            break;
+        }
+    }
+    cout << index;
+}
 int main(){
     // p1();
     // p2();
@@ -118,5 +130,6 @@ int main(){
     // p4();
     // p5();
     // p6();
-    p7();
+    // p7();
+    p8();
 }
