@@ -57,8 +57,24 @@ void p3(){
     }
     cout << "Sorted Array";
 }
+void p4(){
+    vector<int> nums = {1, 1, 2, 2, 2, 3, 4, 4};
+    if (!nums.empty()) {
+        int j = 0;
+        for (int i = 1; i < nums.size(); i++) {
+            if (nums[i] != nums[j]) {
+                nums[++j] = nums[i];
+            }
+        }
+        nums.resize(j + 1);
+    }
+    for (int x : nums) {
+        cout << x << " ";
+    }
+}
 int main(){
     // p1();
     // p2();
-    p3();
+    // p3();
+    p4();
 }
