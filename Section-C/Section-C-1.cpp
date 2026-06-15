@@ -98,11 +98,25 @@ void p6(){
     for (int x : arr)
         cout << x << " ";
 }
+void p7(){
+    vector<int> arr = {1, 0, 2, 0, 3, 4};
+    int j = 0;
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] != 0) {
+            swap(arr[i], arr[j]);
+            j++;
+        }
+    }
+    for (int x : arr) {
+        cout << x << " ";
+    }
+}
 int main(){
     // p1();
     // p2();
     // p3();
     // p4();
     // p5();
-    p6();
+    // p6();
+    p7();
 }
