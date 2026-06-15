@@ -83,10 +83,26 @@ void p5(){
         cout << x << " ";
     }
 }
+void p6(){
+    vector<int> arr = {1, 2, 3, 4, 5, 6, 7};
+    int k = 3;
+    int n = arr.size();
+    k %= n;
+    vector<int> temp(k);
+    for (int i = 0; i < k; i++)
+        temp[i] = arr[i];
+    for (int i = k; i < n; i++)
+        arr[i - k] = arr[i];
+    for (int i = 0; i < k; i++)
+        arr[n - k + i] = temp[i];
+    for (int x : arr)
+        cout << x << " ";
+}
 int main(){
     // p1();
     // p2();
     // p3();
     // p4();
-    p5();
+    // p5();
+    p6();
 }
