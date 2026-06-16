@@ -123,6 +123,45 @@ void p8(){
     }
     cout << index;
 }
+void p9(){
+    vector<int> a = {1, 2, 2, 4, 5};
+    vector<int> b = {2, 3, 5, 6};
+
+    int i = 0, j = 0;
+    vector<int> res;
+    while (i < a.size() && j < b.size()) {
+        int val;
+        if (a[i] < b[j]) {
+            val = a[i++];
+        } 
+        else if (a[i] > b[j]) {
+            val = b[j++];
+        } 
+        else {
+            val = a[i];
+            i++;
+            j++;
+        }
+        if (res.empty() || res.back() != val) {
+            res.push_back(val);
+        }
+    }
+    while (i < a.size()) {
+        if (res.empty() || res.back() != a[i]) {
+            res.push_back(a[i]);
+        }
+        i++;
+    }
+    while (j < b.size()) {
+        if (res.empty() || res.back() != b[j]) {
+            res.push_back(b[j]);
+        }
+        j++;
+    }
+    for (int x : res) {
+        cout << x << " ";
+    }
+}
 int main(){
     // p1();
     // p2();
@@ -131,5 +170,6 @@ int main(){
     // p5();
     // p6();
     // p7();
-    p8();
+    // p8();
+    p9();
 }
