@@ -162,6 +162,18 @@ void p9(){
         cout << x << " ";
     }
 }
+void p10(){
+    int n;
+    cin >> n;  // size should be n-1 elements present
+    int arr[n - 1];
+    long long sum = 0;
+    for (int i = 0; i < n - 1; i++) {
+        cin >> arr[i];
+        sum += arr[i];
+    }
+    long long total = (long long)n * (n + 1) / 2;
+    cout << (total - sum);
+}
 int main(){
     // p1();
     // p2();
@@ -171,5 +183,6 @@ int main(){
     // p6();
     // p7();
     // p8();
-    p9();
+    // p9();
+    p10();
 }
