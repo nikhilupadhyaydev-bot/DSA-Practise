@@ -174,6 +174,25 @@ void p10(){
     long long total = (long long)n * (n + 1) / 2;
     cout << (total - sum);
 }
+void p11(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    int maxCount = 0;
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == 1) {
+            count++;
+            maxCount = max(maxCount, count);
+        } else {
+            count = 0;
+        }
+    }
+    cout << maxCount;
+}
 int main(){
     // p1();
     // p2();
@@ -184,5 +203,6 @@ int main(){
     // p7();
     // p8();
     // p9();
-    p10();
+    // p10();
+    p11();
 }
