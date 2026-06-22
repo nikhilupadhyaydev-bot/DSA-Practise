@@ -193,6 +193,19 @@ void p11(){
     }
     cout << maxCount;
 }
+void p12(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    int ans = 0;
+    for (int i = 0; i < n; i++) {
+        ans ^= arr[i];
+    }
+    cout << ans << endl;
+}
 int main(){
     // p1();
     // p2();
@@ -204,5 +217,6 @@ int main(){
     // p8();
     // p9();
     // p10();
-    p11();
+    // p11();
+    p12();
 }
