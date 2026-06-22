@@ -230,6 +230,30 @@ void p13(){
     }
     cout << maxLen << endl;
 }
+void p14(){
+    int n, k;
+    cin >> n >> k;
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    unordered_map<long long, int> mp;
+    long long sum = 0;
+    int maxLen = 0;
+    for (int i = 0; i < n; i++) {
+        sum += arr[i];
+        if (sum == k) {
+            maxLen = i + 1;
+        }
+        if (mp.find(sum - k) != mp.end()) {
+            maxLen = max(maxLen, i - mp[sum - k]);
+        }
+        if (mp.find(sum) == mp.end()) {
+            mp[sum] = i;   // store first occurrence only
+        }
+    }
+    cout << maxLen << endl;
+}
 int main(){
     // p1();
     // p2();
@@ -243,5 +267,6 @@ int main(){
     // p10();
     // p11();
     // p12();
-    p13();
+    // p13();
+    p14();
 }
