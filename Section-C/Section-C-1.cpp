@@ -206,6 +206,30 @@ void p12(){
     }
     cout << ans << endl;
 }
+void p13(){
+    int n, k;
+    cin >> n >> k;
+
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    int left = 0, sum = 0;
+    int maxLen = 0;
+    for (int right = 0; right < n; right++) {
+        sum += arr[right];
+
+        while (sum > k && left <= right) {
+            sum -= arr[left];
+            left++;
+        }
+
+        if (sum == k) {
+            maxLen = max(maxLen, right - left + 1);
+        }
+    }
+    cout << maxLen << endl;
+}
 int main(){
     // p1();
     // p2();
@@ -218,5 +242,6 @@ int main(){
     // p9();
     // p10();
     // p11();
-    p12();
+    // p12();
+    p13();
 }
