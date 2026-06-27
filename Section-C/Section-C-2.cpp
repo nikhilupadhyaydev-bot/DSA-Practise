@@ -86,8 +86,27 @@ void p3(){
     else
         cout << "No Majority Element";
 }
+void p4(){
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    int maxSum = arr[0];
+    int currentSum = arr[0];
+    for (int i = 1; i < n; i++) {
+        currentSum = max(arr[i], currentSum + arr[i]);
+        maxSum = max(maxSum, currentSum);
+    }
+    cout << "Maximum Subarray Sum = " << maxSum;
+    return;
+}
 int main(){
     // p1();
     // p2();
-    p3();
+    // p3();
+    p4();
 }
