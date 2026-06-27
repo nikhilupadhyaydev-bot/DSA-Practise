@@ -52,7 +52,42 @@ void p2(){
         cout << arr[i] << " ";
     }
 }
+void p3(){
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    // Moore's Voting Algorithm
+    int candidate = arr[0];
+    int count = 1;
+    for (int i = 1; i < n; i++) {
+        if (arr[i] == candidate)
+            count++;
+        else
+            count--;
+
+        if (count == 0) {
+            candidate = arr[i];
+            count = 1;
+        }
+    }
+    // Verify the candidate
+    count = 0;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == candidate)
+            count++;
+    }
+    if (count > n / 2)
+        cout << "Majority Element = " << candidate;
+    else
+        cout << "No Majority Element";
+}
 int main(){
     // p1();
-    p2();
+    // p2();
+    p3();
 }
