@@ -104,9 +104,38 @@ void p4(){
     cout << "Maximum Subarray Sum = " << maxSum;
     return;
 }
+void p5(){
+    vector<int> arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    int maxSum = arr[0];
+    int currSum = arr[0];
+    int start = 0, end = 0;
+    int tempStart = 0;
+    for (int i = 1; i < arr.size(); i++) {
+        if (currSum + arr[i] < arr[i]) {
+            currSum = arr[i];
+            tempStart = i;
+        } else {
+            currSum += arr[i];
+        }
+
+        if (currSum > maxSum) {
+            maxSum = currSum;
+            start = tempStart;
+            end = i;
+        }
+    }
+    cout << "Maximum Subarray Sum = " << maxSum << endl;
+
+    cout << "Subarray: ";
+    for (int i = start; i <= end; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
 int main(){
     // p1();
     // p2();
     // p3();
-    p4();
+    // p4();
+    p5();
 }
