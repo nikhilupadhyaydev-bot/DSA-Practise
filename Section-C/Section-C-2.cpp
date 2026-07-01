@@ -132,10 +132,27 @@ void p5(){
     }
     cout << endl;
 }
+void p6(){
+    vector<int> prices = {7, 1, 5, 3, 6, 4};
+    int maxProfit = 0;
+    // Loop through each day as a potential buy day
+    for (int i = 0; i < prices.size(); i++) {
+        // Loop through each future day as a potential sell day
+        for (int j = i + 1; j < prices.size(); j++) {
+            // Calculate the profit
+            int profit = prices[j] - prices[i];
+
+            // Update maximum profit
+            maxProfit = max(maxProfit, profit);
+        }
+    }
+    cout << "Max Profit: " << maxProfit << endl;
+}
 int main(){
     // p1();
     // p2();
     // p3();
     // p4();
-    p5();
+    // p5();
+    p6();
 }
