@@ -169,6 +169,35 @@ void p7(){
     while (j < neg.size()) res.push_back(neg[j++]);
     for (int x : res) cout << x << " ";
 }
+void p8(){
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    // Step 1: find first decreasing element from right
+    int idx = -1;
+    for (int i = n - 2; i >= 0; i--) {
+        if (a[i] < a[i + 1]) {
+            idx = i;
+            break;
+        }
+    }
+    // Step 2: if found, swap with just greater element on right
+    if (idx != -1) {
+        for (int i = n - 1; i > idx; i--) {
+            if (a[i] > a[idx]) {
+                swap(a[i], a[idx]);
+                break;
+            }
+        }
+    }
+    // Step 3: reverse the right half
+    sort(a.begin() + idx + 1, a.end());
+    for (int x : a)
+        cout << x << " ";
+
+}
 int main(){
     // p1();
     // p2();
@@ -176,5 +205,6 @@ int main(){
     // p4();
     // p5();
     // p6();
-    p7();
+    // p7();
+    p8();
 }
