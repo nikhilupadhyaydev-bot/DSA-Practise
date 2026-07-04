@@ -148,11 +148,33 @@ void p6(){
     }
     cout << "Max Profit: " << maxProfit << endl;
 }
+void p7(){
+    int n;
+    cin >> n;
+    vector<int> a(n), pos, neg;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        if (a[i] >= 0) pos.push_back(a[i]);
+        else neg.push_back(a[i]);
+    }
+    vector<int> res;
+    int i = 0, j = 0;
+    // alternate placing positive and negative
+    while (i < pos.size() && j < neg.size()) {
+        res.push_back(pos[i++]);
+        res.push_back(neg[j++]);
+    }
+    // if any leftover elements remain
+    while (i < pos.size()) res.push_back(pos[i++]);
+    while (j < neg.size()) res.push_back(neg[j++]);
+    for (int x : res) cout << x << " ";
+}
 int main(){
     // p1();
     // p2();
     // p3();
     // p4();
     // p5();
-    p6();
+    // p6();
+    p7();
 }
