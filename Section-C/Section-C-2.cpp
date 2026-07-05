@@ -198,6 +198,25 @@ void p8(){
         cout << x << " ";
 
 }
+void p9(){
+    int n;
+    cin >> n;
+    vector<int> a(n), ans;
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    int maxi = INT_MIN;
+    // Traverse from right to left
+    for (int i = n - 1; i >= 0; i--) {
+        if (a[i] >= maxi) {
+            ans.push_back(a[i]);
+            maxi = a[i];
+        }
+    }
+    // Reverse to restore original order
+    reverse(ans.begin(), ans.end());
+    for (int x : ans)
+        cout << x << " ";
+}
 int main(){
     // p1();
     // p2();
@@ -206,5 +225,6 @@ int main(){
     // p5();
     // p6();
     // p7();
-    p8();
+    // p8();
+    p9();
 }
