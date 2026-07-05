@@ -217,6 +217,32 @@ void p9(){
     for (int x : ans)
         cout << x << " ";
 }
+void p10(){
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    unordered_set<int> st;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        st.insert(a[i]);
+    }
+    int longest = 0;
+    for (int x : st) {
+        // Start of a sequence
+        if (st.find(x - 1) == st.end()) {
+            int curr = x;
+            int cnt = 1;
+
+            while (st.find(curr + 1) != st.end()) {
+                curr++;
+                cnt++;
+            }
+
+            longest = max(longest, cnt);
+        }
+    }
+    cout << longest;
+}
 int main(){
     // p1();
     // p2();
@@ -226,5 +252,6 @@ int main(){
     // p6();
     // p7();
     // p8();
-    p9();
+    // p9();
+    p10();
 }
