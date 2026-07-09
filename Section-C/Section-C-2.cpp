@@ -243,6 +243,61 @@ void p10(){
     }
     cout << longest;
 }
+void p11(){
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> matrix(n, vector<int>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+    bool firstRowZero = false;
+    bool firstColZero = false;
+    // Check if first row has zero
+    for (int j = 0; j < m; j++) {
+        if (matrix[0][j] == 0)
+            firstRowZero = true;
+    }
+    // Check if first column has zero
+    for (int i = 0; i < n; i++) {
+        if (matrix[i][0] == 0)
+            firstColZero = true;
+    }
+    // Use first row and first column as markers
+    for (int i = 1; i < n; i++) {
+        for (int j = 1; j < m; j++) {
+            if (matrix[i][j] == 0) {
+                matrix[i][0] = 0;
+                matrix[0][j] = 0;
+            }
+        }
+    }
+    // Make cells zero based on markers
+    for (int i = 1; i < n; i++) {
+        for (int j = 1; j < m; j++) {
+            if (matrix[i][0] == 0 || matrix[0][j] == 0)
+                matrix[i][j] = 0;
+        }
+    }
+    // Zero first row
+    if (firstRowZero) {
+        for (int j = 0; j < m; j++)
+            matrix[0][j] = 0;
+    }
+    // Zero first column
+    if (firstColZero) {
+        for (int i = 0; i < n; i++)
+            matrix[i][0] = 0;
+    }
+    // Print result
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
 int main(){
     // p1();
     // p2();
@@ -253,5 +308,6 @@ int main(){
     // p7();
     // p8();
     // p9();
-    p10();
+    // p10();
+    p11();
 }
