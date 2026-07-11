@@ -334,6 +334,57 @@ void p12(){
         cout << endl;
     }
 }
+void p13(){
+    int n, m;
+    
+    cout << "Enter rows and columns: ";
+    cin >> n >> m;
+
+    int mat[100][100];
+
+    cout << "Enter matrix elements:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> mat[i][j];
+        }
+    }
+
+    int top = 0, bottom = n - 1;
+    int left = 0, right = m - 1;
+
+    cout << "Spiral order: ";
+
+    while (top <= bottom && left <= right) {
+
+        // Traverse top row
+        for (int j = left; j <= right; j++) {
+            cout << mat[top][j] << " ";
+        }
+        top++;
+
+        // Traverse right column
+        for (int i = top; i <= bottom; i++) {
+            cout << mat[i][right] << " ";
+        }
+        right--;
+
+        // Traverse bottom row
+        if (top <= bottom) {
+            for (int j = right; j >= left; j--) {
+                cout << mat[bottom][j] << " ";
+            }
+            bottom--;
+        }
+
+        // Traverse left column
+        if (left <= right) {
+            for (int i = bottom; i >= top; i--) {
+                cout << mat[i][left] << " ";
+            }
+            left++;
+        }
+    }
+}
 int main(){
     // p1();
     // p2();
@@ -346,5 +397,6 @@ int main(){
     // p9();
     // p10();
     // p11();
-    p12();
+    // p12();
+    p13();
 }
