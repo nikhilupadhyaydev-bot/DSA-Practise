@@ -385,6 +385,45 @@ void p13(){
         }
     }
 }
+void p14(){
+    int n, k;
+
+    cout << "Enter size of array: ";
+    cin >> n;
+
+    int arr[100];
+
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cout << "Enter required sum: ";
+    cin >> k;
+
+    unordered_map<int, int> mp;
+
+    int prefixSum = 0;
+    int count = 0;
+
+    // Empty prefix sum
+    mp[0] = 1;
+
+    for (int i = 0; i < n; i++) {
+        prefixSum += arr[i];
+
+        // Check if prefixSum - k exists
+        if (mp.find(prefixSum - k) != mp.end()) {
+            count += mp[prefixSum - k];
+        }
+
+        // Store current prefix sum
+        mp[prefixSum]++;
+    }
+
+    cout << "Number of subarrays with sum " << k << " = " << count;
+
+}
 int main(){
     // p1();
     // p2();
@@ -398,5 +437,6 @@ int main(){
     // p10();
     // p11();
     // p12();
-    p13();
+    // p13();
+    p14();
 }
