@@ -298,6 +298,42 @@ void p11(){
         cout << endl;
     }
 }
+void p12(){
+    int n;
+    cout << "Enter size of matrix: ";
+    cin >> n;
+
+    int mat[100][100];
+
+    cout << "Enter matrix elements:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> mat[i][j];
+        }
+    }
+
+    // Transpose the matrix
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            swap(mat[i][j], mat[j][i]);
+        }
+    }
+
+    // Reverse each row
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n / 2; j++) {
+            swap(mat[i][j], mat[i][n - 1 - j]);
+        }
+    }
+
+    cout << "Matrix after 90 degree rotation:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << mat[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
 int main(){
     // p1();
     // p2();
@@ -309,5 +345,6 @@ int main(){
     // p8();
     // p9();
     // p10();
-    p11();
+    // p11();
+    p12();
 }
